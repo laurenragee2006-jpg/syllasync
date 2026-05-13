@@ -201,7 +201,7 @@ async function handleFile(file: File) {
                 onClick={() => fileInputRef.current?.click()}
               >
                 <div className="drop-zone-icon">✦</div>
-                <div className="drop-zone-text">Drag & drop your PDF here</div>
+                <div className="drop-zone-text">{pdfLoading ? "Reading your PDF... (this takes ~30s)" : "Drag & drop your PDF here"}</div>
                 <div className="drop-zone-sub">or click to browse files</div>
                 {fileName && <div className="drop-zone-file">📄 {fileName}</div>}
               </div>
@@ -219,7 +219,7 @@ async function handleFile(file: File) {
               />
             </div>
 
-            <button className="ss-btn ss-btn-forest" onClick={handleExtract} disabled={(!syllabus && !fileName) || loading}>
+            <button className="ss-btn ss-btn-forest" onClick={handleExtract} disabled={(!syllabus && !fileName) || loading || pdfLoading}>
               {loading ? <><span className="ss-spinner" /> Extracting...</> : <>✦ Extract deadlines</>}
             </button>
           </div>
