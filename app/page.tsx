@@ -215,7 +215,7 @@ export default function Home() {
               />
             </div>
 
-            <button className="ss-btn ss-btn-forest" onClick={handleExtract} disabled={!syllabus || loading}>
+            <button className="ss-btn ss-btn-forest" onClick={handleExtract} disabled={(!syllabus && !fileName) || loading}>
               {loading ? <><span className="ss-spinner" /> Extracting...</> : <>✦ Extract deadlines</>}
             </button>
           </div>
