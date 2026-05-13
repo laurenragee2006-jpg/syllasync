@@ -40,6 +40,7 @@ export default function Home() {
   const [step, setStep] = useState<"input" | "deadlines" | "schedule">("input");
   const [dragOver, setDragOver] = useState(false);
   const [fileName, setFileName] = useState<string | null>(null);
+  const [pdfLoading, setPdfLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   async function extractTextFromPDF(file: File): Promise<string> {
@@ -50,20 +51,23 @@ export default function Home() {
     return data.text || "";
   }
 
-  async function handleFile(file: File) {
-    if (file.type === "application/pdf") {
-      setFileName(file.name);
-      try {
-        const text = await extractTextFromPDF(file);
-        setSyllabus(text);
-      } catch {
-        alert("Couldn't read that PDF. Try copying and pasting the text instead.");
-        setFileName(null);
-      }
-    } else {
-      alert("Please upload a PDF file.");
+async function handleFile(file: File) {
+  if (file.type === "application/pdf") {
+    setFileName(file.name);
+    setPdfLoading(true);
+    try {
+      const text = await extractTextFromPDF(file);
+      setSyllabus(text);
+    } catch {
+      alert("Couldn't read that PDF. Try copying and pasting the text instead.");
+      setFileName(null);
+    } finally {
+      setPdfLoading(false);
     }
+  } else {
+    alert("Please upload a PDF file.");
   }
+}
 
   const handleDrop = useCallback(async (e: React.DragEvent) => {
     e.preventDefault();
