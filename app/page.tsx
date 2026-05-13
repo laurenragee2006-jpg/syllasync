@@ -267,7 +267,7 @@ async function handleFile(file: File) {
               <div className="ss-section-title">✦ Your study schedule</div>
               <button className="ss-btn-ghost" onClick={() => setStep("deadlines")}>← back to deadlines</button>
             </div>
-            <div className="ss-schedule-box">{schedule}</div>
+            <<div className="ss-schedule-box" dangerouslySetInnerHTML={{ __html: schedule.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\*(.*?)\*/g, '<em>$1</em>').replace(/^## (.*?)$/gm, '<h3>$1</h3>').replace(/^# (.*?)$/gm, '<h2>$1</h2>').replace(/^- /gm, '• ').replace(/\n/g, '<br/>') }} />
           </div>
         )}
 
