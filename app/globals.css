@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap');
+
+:root {
+  --cream:   #F5F0E6;
+  --forest:  #3D4F2E;
+  --fern:    #7A8F62;
+  --peach:   #E8A090;
+  --sky:     #A8C0D6;
+  --lime:    #D6E08A;
+  --mustard: #E8C86A;
+  --dark:    #2C2C2C;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--dark);
+  font-family: 'DM Sans', Georgia, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
