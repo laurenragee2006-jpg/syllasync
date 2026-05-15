@@ -1,36 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# syllasync
 
-## Getting Started
+paste your syllabus. get a plan.
 
-First, run the development server:
+Uploading a syllabus PDF or paste it in, and SyllaStudy pulls out the 
+deadlines and turns everything into a study schedule. Built this because 
+reading through a syllabus to figure out what actually matters is 
+genuinely annoying.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Still in progress.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Live Site
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+[syllasync-five.vercel.app](https://syllasync-five.vercel.app)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## What it does
 
-## Learn More
+- Upload a syllabus as a PDF or paste the text directly
+- Extracts deadlines, exams, and key dates
+- Generates a study plan from what it finds
 
-To learn more about Next.js, take a look at the following resources:
+## Built with
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+TypeScript, Next.js — deployed on Vercel.
