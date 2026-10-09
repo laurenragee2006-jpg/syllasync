@@ -7,11 +7,6 @@ deadlines and turns everything into a study schedule. Built this because
 reading through a syllabus to figure out what actually matters is 
 genuinely annoying.
 
-Still in progress.
-
-## Live Site
-
-[syllasync-five.vercel.app](https://syllasync-five.vercel.app)
 
 ## What it does
 
